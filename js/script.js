@@ -72,9 +72,13 @@ const changeSongIndex = (value) => {
 
 //Listen to events
 audioElement.addEventListener('timeupdate', ()=>{
-    progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
-    progressBar.value = progress;
-})
+    if(isNaN(audioElement.duration)){
+        progressBar.value = 0;
+    }else{
+        progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
+        progressBar.value = progress;
+    }
+});
 
 progressBar.addEventListener('change',()=> {
     audioElement.currentTime = progressBar.value * audioElement.duration/100;
