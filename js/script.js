@@ -1,12 +1,12 @@
 let songs = [
-    {songName: "Warriyo - Mortals (ft. Laura Brehm)", filePath:"songs/1.mp3",coverPath:"covers/1.jpg"},
-    {songName: "Cielo - Huma-Huma", filePath:"songs/2.mp3",coverPath:"covers/2.jpg"},
-    {songName: "DEAF KEV - Invincible", filePath:"songs/3.mp3",coverPath:"covers/3.jpg"},
-    {songName: "Different Heaven & EHIDE - My Heart", filePath:"songs/4.mp3",coverPath:"covers/4.jpg"},
-    {songName: "Janji-Heroes-Tonight", filePath:"songs/5.mp3",coverPath:"covers/5.jpg"},
-    {songName: "Rabba", filePath:"songs/6.mp3",coverPath:"covers/6.jpg"},
-    {songName: "Bhula Dena", filePath:"songs/7.mp3",coverPath:"covers/7.jpg"},
-    {songName: "Tum Hi Ho", filePath:"songs/8.mp3",coverPath:"covers/8.jpg"}
+    {songName: "Warriyo - Mortals",songDuration:"03:50", filePath:"songs/1.mp3",coverPath:"covers/1.jpg"},
+    {songName: "Bijlee-Bijlee",songDuration:"02:48", filePath:"songs/2.mp3",coverPath:"covers/2.jpg"},
+    {songName: "Rait Zara Si",songDuration:"04:51", filePath:"songs/3.mp3",coverPath:"covers/3.jpg"},
+    {songName: "Excuses - AP Dhillon",songDuration:"02:56", filePath:"songs/4.mp3",coverPath:"covers/4.jpg"},
+    {songName: "Jug Jug Jeeve",songDuration:"03:19", filePath:"songs/5.mp3",coverPath:"covers/5.jpg"},
+    {songName: "Pehli Mohabbat",songDuration:"04:04", filePath:"songs/6.mp3",coverPath:"covers/6.jpg"},
+    {songName: "Insane - AP Dhillon",songDuration:"03:26", filePath:"songs/7.mp3",coverPath:"covers/7.jpg"},
+    {songName: "Lily - Alan Walker",songDuration:"03:16", filePath:"songs/8.mp3",coverPath:"covers/8.jpg"}
 ]
 
 let audioElement = new Audio('songs/1.mp3');
@@ -23,6 +23,7 @@ let songItems = Array.from(document.getElementsByClassName('songItem'));
 songItems.forEach((song,i) => {
   song.getElementsByTagName("img")[0].src = songs[i].coverPath;
   song.getElementsByClassName("songName")[0].innerText = songs[i].songName;
+  song.getElementsByClassName("duration")[0].innerText = songs[i].songDuration;
 })
 
 //handle play pause click
