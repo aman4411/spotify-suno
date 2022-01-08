@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300&family=Open+Sans+Condensed:ital,wght@1,300&family=Ubuntu:wght@300;400&display=swap');
+body{
+    background-color: antiquewhite;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 8vh;
+    background-color: black;
+    color: white;
+}
+
+nav ul li{
+    padding: 0px 1vw;
+}
+
+.brand img{
+    width: 42px;
+    padding: 0 8px;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
