@@ -25,6 +25,15 @@ nav ul li{
     padding: 0px 1vw;
 }
 
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item{
+    cursor: pointer;
+}
+
 .brand img{
     width: 42px;
     padding: 0 8px;
@@ -84,7 +93,7 @@ nav ul li{
 }
 
 .songItem{
-    height: 45px;
+    height: 7vh;
     display: flex;
     background-color: white;
     width: 80%;
@@ -96,9 +105,18 @@ nav ul li{
 }
 
 .songItem img{
-    width: 37px;
-    margin: 0 8px;
+    width: 6.7vh;
+    margin: 0 2px;
     border-radius: 25px;
+}
+
+.songlistplay{
+    display: flex;
+    align-items: center;
+}
+
+.songItem span{
+    font-size: 1rem;  
 }
 
 .timestamp{
@@ -121,4 +139,52 @@ nav ul li{
 .songInfo img{
     opacity: 0;
     transition: opacity 0.4s ease-in;
+}
+
+@media only screen and (max-width: 1050px) {
+    .nav-item{
+        display: none;
+    }
+    .songItem{
+        width: 45vw;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .songItem{
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .songItem{
+        width: 55vw;
+    }
+    .songInfo{
+        position: relative;
+        left: 0vw;
+        margin: 4px 0;
+    }
+    .icons{
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    .bottom{
+        height: 18vh;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+    .songItem{
+        width: 70vw;
+    }
+    .container{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .songItem{
+        width: 82vw;
+    }
 }

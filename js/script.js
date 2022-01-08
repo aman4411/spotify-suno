@@ -4,14 +4,16 @@ let songs = [
     {songName: "DEAF KEV - Invincible", filePath:"songs/3.mp3",coverPath:"covers/3.jpg"},
     {songName: "Different Heaven & EHIDE - My Heart", filePath:"songs/4.mp3",coverPath:"covers/4.jpg"},
     {songName: "Janji-Heroes-Tonight", filePath:"songs/5.mp3",coverPath:"covers/5.jpg"},
-    {songName: "Rabba", filePath:"songs/1.mp3",coverPath:"covers/6.jpg"},
-    {songName: "Bhula Dena", filePath:"songs/2.mp3",coverPath:"covers/7.jpg"},
-    {songName: "Tum Hi Ho", filePath:"songs/3.mp3",coverPath:"covers/8.jpg"}
+    {songName: "Rabba", filePath:"songs/6.mp3",coverPath:"covers/6.jpg"},
+    {songName: "Bhula Dena", filePath:"songs/7.mp3",coverPath:"covers/7.jpg"},
+    {songName: "Tum Hi Ho", filePath:"songs/8.mp3",coverPath:"covers/8.jpg"}
 ]
 
 let audioElement = new Audio('songs/1.mp3');
 let songIndex = 0;
 let masterPlay = document.getElementById('masterPlay');
+let previous = document.getElementById('previousButton');
+let next = document.getElementById('nextButton');
 let masterSongName = document.getElementById('masterSongName');
 let progressBar = document.getElementById('myProgressBar');
 let musicGif = document.getElementById('musicGif');
@@ -38,7 +40,34 @@ masterPlay.addEventListener('click',()=>{
         masterPlay.classList.add('fa-play-circle');
         makePreviousSongPause(songIndex);
     }
+});
+
+previous.addEventListener('click', () => {
+    makePreviousSongPause(songIndex);
+    changeSongIndex(-1);
+    audioElement.src = songs[songIndex].filePath;
+    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.play();
+    makeSongPlay(songIndex);
+});
+
+next.addEventListener('click', () => {
+    makePreviousSongPause(songIndex);
+    changeSongIndex(1);
+    audioElement.src = songs[songIndex].filePath;
+    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.play();
+    makeSongPlay(songIndex);
 })
+
+const changeSongIndex = (value) => {
+    songIndex = songIndex+value;
+    if(songIndex < 0){
+        songIndex = songs.length-1;
+    }else if(songIndex == songs.length){
+        songIndex = 0;
+    }
+}
 
 //Listen to events
 audioElement.addEventListener('timeupdate', ()=>{
