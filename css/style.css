@@ -36,3 +36,40 @@ nav ul li{
     font-weight: bolder;
     font-size: 1.3rem;
 }
+
+.container{
+    min-height: 70vh;
+    background-color: black;
+    color: white;
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    margin: 23px auto;
+    width: 70%;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url('/images/bg.jpg');
+    background-size: cover;
+}
+
+/* Bottom Play Control Styling */
+
+.bottom{
+    position: sticky;
+    height: 15vh;
+    bottom: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+.icons{
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#myProgressBar{
+      width: 80vw;
+}
